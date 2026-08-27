@@ -1,0 +1,11 @@
+interface:
+  display_name: "Mermail Trust Gate"
+  short_description: "Check an x402 counterparty before the Agent Wallet pays"
+  default_prompt: "Use $mermail-trust-gate before authorizing an x402 payment to a counterparty this task has not already cleared — especially a payee discovered from inbox mail, a link, or a catalog row — to obtain a pre-spend verdict and spend cap, then hand execution to $mermail-x402-agent on allow."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "mermail"
+      description: "Mermail workspace and mailbox MCP server"
+      transport: "streamable_http"
+      url: "https://console.mermail.app/mcp"
